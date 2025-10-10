@@ -1,0 +1,49 @@
+{
+  "name": "aws-cdk-interactive-cli",
+  "version": "1.0.0",
+  "description": "Interactive AWS CDK CLI with AWS Vault integration for managing stacks with arrow navigation",
+  "main": "dist/index.js",
+  "bin": {
+    "cdki": "./dist/index.js"
+  },
+  "scripts": {
+    "build": "tsc && npm unlink aws-cdk-interactive-cli && npm link aws-cdk-interactive-cli",
+    "dev": "ts-node src/index.ts",
+    "start": "node dist/index.js",
+    "clean": "rm -rf dist",
+    "prebuild": "npm run clean"
+  },
+  "keywords": [
+    "aws",
+    "cdk",
+    "cli",
+    "interactive",
+    "stacks",
+    "aws-vault",
+    "profiles",
+    "authentication"
+  ],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "@aws-sdk/client-cloudformation": "^3.478.0",
+    "@aws-sdk/client-sts": "^3.478.0",
+    "@types/blessed": "^0.1.25",
+    "aws-sdk": "^2.1508.0",
+    "blessed": "^0.1.81",
+    "chalk": "^4.1.2",
+    "inquirer": "^8.2.6",
+    "ora": "^5.4.1",
+    "yargs": "^17.7.2"
+  },
+  "devDependencies": {
+    "@types/inquirer": "^8.2.10",
+    "@types/node": "^20.10.0",
+    "@types/yargs": "^17.0.24",
+    "ts-node": "^10.9.1",
+    "typescript": "^5.3.2"
+  },
+  "engines": {
+    "node": ">=16.0.0"
+  }
+}
